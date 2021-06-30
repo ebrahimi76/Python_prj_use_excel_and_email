@@ -31,7 +31,7 @@ end = float(e)
 work = input('work\t')
 tw = timeWork()
 
-newList = {'DAY':day, 'START': start, 'END': end, 'WORK': work, 'TIME': timeWork}
+newList = {'DAY':day, 'START': start, 'END': end, 'WORK': work, 'TIME': tw}
 oldList.append(newList)
 list = oldList
 print(list)
