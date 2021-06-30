@@ -12,22 +12,24 @@ oldList = df.to_dict('records')
 print(oldList)
 
 day = int(input('day\t'))
+
+def timeWork():
+    h1 = int(s.split('.')[0])
+    m1 = int(s.split('.')[1])
+    h2 = int(e.split('.')[0])
+    m2 = int(e.split('.')[1])    
+    d = (h2*60+m2)-(h1*60+m1)
+    hd = str(d // 60)
+    md = str(d % 60)
+    timeWork = float(hd+'.'+md)
+    return timeWork
+    
 s = input('start\t')
 start = float(s)
 e = input('end\t')
 end = float(e)
 work = input('work\t')
-
-t1 = s
-h1 = int(t1.split('.')[0])
-m1 = int(t1.split('.')[1])
-t2 = e
-h2 = int(t2.split('.')[0])
-m2 = int(t2.split('.')[1])
-d = (h2*60+m2)-(h1*60+m1)
-hd = str(d // 60)
-md = str(d % 60)
-timeWork = float(hd+'.'+md)
+tw = timeWork()
 
 newList = {'DAY':day, 'START': start, 'END': end, 'WORK': work, 'TIME': timeWork}
 oldList.append(newList)
@@ -65,7 +67,7 @@ workbook.close()
 
 sender = 'send.by.py@gmail.com'
 receivers = ['ebrahimimohammadali76@gmail.com']
-body_of_email = 'Warning! Ali is Coming:)'
+body_of_email = 'Your daily data'
 
 msg = MIMEMultipart()
 msg['Subject'] = '=BACK UP=(Days:'+str(numDay+1)+')'
